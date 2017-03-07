@@ -1,0 +1,44 @@
+#include<iostream>
+using namespace std;
+class m
+{
+	protected:
+	int m;
+	public:
+	void get_m(int);
+};
+void m::get_m(int x)
+{
+	m=x;
+}
+class n
+{
+	protected:
+	int n;
+	public:
+	void get_n(int);
+};
+void n::get_n(int y)
+{
+	n=y;
+}
+class p:public m,public n
+{
+public:
+void display(void);
+};
+void p::display()
+{
+cout<<"m="<<m<<endl;
+cout<<"n="<<n<<endl;
+cout<<"m*n="<<m*n<<endl;
+}
+
+int main(void)
+{
+	p P;
+	P.get_m(10);
+	P.get_n(20);
+	P.display();
+	return 0;
+}
